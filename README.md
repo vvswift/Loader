@@ -77,3 +77,12 @@ The user should copy and paste the displayed command into the Terminal on macOS.
 - Locally sign and run it
 
 After 3 minutes, start.sh deletes all client files from disk. The client continues running in a detached background child process.
+
+---
+  
+🚫 Disclaimer
+
+This repository is provided for educational purposes only and intended for authorized security research.
+Use of these materials in unauthorized or illegal activities is strictly prohibited.
+
+---
