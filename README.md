@@ -1,15 +1,15 @@
 Loader.sh compiles the app bundle on the user's device, automatically installing all dependencies, locally signs it, and launches it, bypassing Gatekeeper/Notarization.
 
-When started, Loader.sh prompts for two URLs: one for the client's ZIP file and another for the future location of start.sh on the server. It also asks for the path to the **Client** folder (or whatever you named it — the folder containing the client source code that needs to be compiled).
+When started, Loader.sh prompts for two URLs: one for the client's ZIP file and another for the future location of start.sh on the server. It also asks for the path to the Client folder (or whatever you named it the folder containing the client source code that needs to be compiled).
 
 The script copies the specified folder to the working directory, renames it to scr, and creates a ready-to-use ZIP archive scr.zip, which you simply need to upload to the server at the URL you provided in the ZIP path step.
 
-Upon completion of **Loader.sh**, a **start.sh** file appears in the working directory. This file serves as the loader: it downloads the archive from the server, compiles the app, and then deletes everything. All of this is handled automatically by **start.sh**.
+Upon completion of Loader.sh, a start.sh file appears in the working directory. This file serves as the loader: it downloads the archive from the server, compiles the app, and then deletes everything. All of this is handled automatically by start.sh.
 
-### What is the **scr** folder?
-It is a copy of the **Client** folder with all unnecessary files removed. Only the source code and the **build.sh** script remain. **Loader.sh** does this cleanup automatically.
+### What is the scr folder?
+It is a copy of the Client folder with all unnecessary files removed. Only the source code and the build.sh script remain. Loader.sh does this cleanup automatically.
 
-## How the generated **start.sh** works step by step:
+## How the generated start.sh works step by step:
 
 - Downloads the ZIP archive from the specified URL
 - Unzips it into the current directory, creating a **scr** folder
